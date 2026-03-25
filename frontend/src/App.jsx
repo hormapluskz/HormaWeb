@@ -6,74 +6,93 @@ import Features from './components/Features'
 import Lab from './components/Lab'
 import Team from './components/Team'
 import Contact from './components/Contact'
+import Kit from './components/Kit'
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const navLinks = [
+    { href: '#home', label: 'Home' },
+    { href: '#features', label: 'Features' },
+    { href: '#lab', label: 'Horma+ Lab' },
+    { href: '#kit', label: 'Horma+ Kit' },
+    { href: '#story', label: 'Story' },
+    { href: '#team', label: 'Team' },
+    { href: '#contact', label: 'Contact' },
+  ]
+
   return (
-    <div className="min-h-screen bg-white text-black overflow-hidden">
+    <div className="min-h-screen bg-white text-black overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 pt-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
-              <span className="text-2xl font-sans font-bold tracking-tight text-black">
-                Horma+ Ring
+      <nav className="fixed inset-x-0 top-0 z-[199] w-screen pl-4 pr-5 pt-4 transition-all duration-200 ease-in-out will-change-transform max-[991px]:px-0 max-[991px]:pt-0">
+        <div
+          className="max-w-[70rem] mx-auto rounded-full px-2 pl-8 z-[999] max-[991px]:rounded-none max-[991px]:px-6 max-[991px]:py-3.5 max-[479px]:px-5"
+          style={{
+            backgroundColor: '#000000b3',
+            boxShadow: '0 1px 4px #0003, 0 7px 24px #0000001a',
+            backdropFilter: 'blur(12px)'
+          }}
+        >
+          {/* Main row */}
+          <div className="flex items-center w-full h-14 max-[991px]:h-auto">
+            <div className="flex items-center w-1/2">
+              <span className="text-2xl font-sans font-bold tracking-tight text-white">
+                Horma+
               </span>
             </div>
-            <div className="hidden md:flex space-x-4">
-              <a 
-                href="#home" 
-                className="glass-transparent px-6 py-2 rounded-full text-black/70 hover:text-black hover:bg-black/5 transition-all duration-200 font-light tracking-wide text-sm"
-              >
-                Home
-              </a>
-              <a 
-                href="#features" 
-                className="glass-transparent px-6 py-2 rounded-full text-black/70 hover:text-black hover:bg-black/5 transition-all duration-200 font-light tracking-wide text-sm"
-              >
-                Features
-              </a>
-              <a 
-                href="#story" 
-                className="glass-transparent px-6 py-2 rounded-full text-black/70 hover:text-black hover:bg-black/5 transition-all duration-200 font-light tracking-wide text-sm"
-              >
-                Story
-              </a>
-              <a 
-                href="#lab" 
-                className="glass-transparent px-6 py-2 rounded-full text-black/70 hover:text-black hover:bg-black/5 transition-all duration-200 font-light tracking-wide text-sm"
-              >
-                Lab
-              </a>
-              <a 
-                href="#team" 
-                className="glass-transparent px-6 py-2 rounded-full text-black/70 hover:text-black hover:bg-black/5 transition-all duration-200 font-light tracking-wide text-sm"
-              >
-                Team
-              </a>
-              <a 
-                href="#contact" 
-                className="glass-transparent px-6 py-2 rounded-full text-black/70 hover:text-black hover:bg-black/5 transition-all duration-200 font-light tracking-wide text-sm"
-              >
-                Contact
-              </a>
+
+            {/* Desktop links */}
+            <div className="hidden md:flex flex-1 justify-center items-center gap-6 group">
+              {navLinks.map(({ href, label }) => (
+                <a key={href} href={href} className="text-white transition-colors duration-200 font-bold tracking-tight text-sm whitespace-nowrap group-hover:text-white/40 hover:!text-white" style={{ fontFamily: 'sans-serif' }}>
+                  {label}
+                </a>
+              ))}
             </div>
+
+            {/* Burger button (mobile) */}
+            <button
+              className="md:hidden ml-auto flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menu"
+            >
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </button>
           </div>
+
         </div>
       </nav>
 
-      {/* Background gradient effects */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-[150px] animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary-600/5 rounded-full blur-[120px] animate-pulse delay-1000"></div>
-      </div>
+      {/* Full-screen mobile menu */}
+      {menuOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-[198] flex flex-col justify-center px-8 group"
+          style={{ backgroundColor: 'rgba(0,0,0,0.95)', backdropFilter: 'blur(20px)' }}
+        >
+          {navLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className="py-4 text-white font-bold tracking-tight transition-all duration-200 group-hover:text-white/30 hover:!text-white"
+              style={{ fontSize: '2.5rem', fontFamily: 'sans-serif' }}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="relative z-10">
         <Hero />
         <Stats />
-        <Story />
         <Features />
         <Lab />
+        <Kit/>
+        <Story />
         <Team />
         <Contact />
       </main>

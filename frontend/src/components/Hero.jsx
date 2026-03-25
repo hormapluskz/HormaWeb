@@ -33,125 +33,41 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-end overflow-hidden">
       {/* Full Screen Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/hero-background.jpg" 
-          alt="Background" 
-          className="w-full h-full object-cover"
+        <img
+          src="/hero-background.jpg"
+          alt="Background"
+          className="w-full h-full object-cover object-top"
           onError={(e) => {
-            e.target.style.background = 'linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%)'
+            e.target.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)'
           }}
         />
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-end">
-          {/* Left Column - Main Content */}
-          <div className="space-y-8 lg:mb-8">
-            {/* Main heading */}
-            <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-bold tracking-tight leading-none drop-shadow-sm">
-                <span className="text-white">Clarity starts </span>
-                <span className="text-white">here</span>
-              </h1>
+      {/* Content — mobile: bottom left | desktop: center */}
+      <div className="relative z-10 w-full px-6 pb-16 md:px-12 md:pb-16 lg:flex lg:items-center lg:justify-center lg:pb-0 lg:h-full lg:absolute lg:inset-0">
+        <div className="flex flex-col gap-8 w-full lg:items-center lg:text-center lg:max-w-4xl">
 
-              {/* Subtitle */}
-              <p className="text-xl md:text-2xl text-white/90 font-light tracking-wide drop-shadow-sm">
-                Predict. Prevent. Perform.
-              </p>
-            </div>
+          <h1 className="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[80px] font-sans font-bold tracking-tight leading-tight text-white lg:whitespace-nowrap">
+            Unlock your hormone intelligence
+          </h1>
 
-            {/* Description/Clickbait */}
-            <div className="max-w-xl">
-              <p className="text-base md:text-lg text-white/80 font-light leading-relaxed italic drop-shadow-sm">
-                Meet <span className="text-white font-medium not-italic">Horma+ Ring</span>, a wellness ring that provides continuous, 
-                <br />
-                non-invasive glucose and hormone monitoring
-              </p>
-            </div>
-          </div>
+          <p className="text-[14px] md:text-[16px] lg:text-[22px] text-white/80 font-light leading-relaxed italic drop-shadow-sm max-w-lg lg:max-w-2xl">
+            <span className="text-white font-medium not-italic">Horma+</span>, a wellness platform that provides continuous,<br className="hidden lg:block" /> non-invasive hormone and glucose monitoring.
+          </p>
 
-          {/* Right Column - Priority Access Form */}
-          <div className="w-full max-w-md mx-auto lg:ml-auto lg:mr-0 lg:mt-20">
-            <div className="glass-transparent-form rounded-3xl p-8">
-              {/* Form Header */}
-              <div className="mb-6 text-center">
-                <h3 className="text-2xl md:text-3xl font-sans font-bold mb-3 text-white">
-                  Horma+ Priority Access
-                </h3>
-                <p className="text-white/90 font-light leading-relaxed text-sm max-w-md mx-auto">
-                  Be among the first for whom we adapt the technologies of the future, providing personalized care for your hormonal health.
-                </p>
-              </div>
+          <a
+            href="#contact"
+            className="self-start lg:self-auto flex items-center gap-2 px-8 py-3.5 text-black font-medium tracking-wide text-sm rounded-[24px] transition-all duration-200 hover:opacity-90"
+            style={{ backgroundColor: 'rgba(255,255,255,1)', backdropFilter: 'blur(12px)' }}
+          >
+            Get Priority Access
+            <span className="text-base">›</span>
+          </a>
 
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Full name"
-                    className="w-full px-5 py-3 glass-transparent text-white rounded-xl focus:ring-2 focus:ring-white/20 focus:outline-none transition-all duration-200 font-light placeholder-white/50 text-sm"
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="Email address"
-                    className="w-full px-5 py-3 glass-transparent text-white rounded-xl focus:ring-2 focus:ring-white/20 focus:outline-none transition-all duration-200 font-light placeholder-white/50 text-sm"
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="Phone number"
-                    className="w-full px-5 py-3 glass-transparent text-white rounded-xl focus:ring-2 focus:ring-white/20 focus:outline-none transition-all duration-200 font-light placeholder-white/50 text-sm"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="w-full py-3 glass-transparent hover:bg-black/80 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-black rounded-xl transition-all duration-200 font-medium tracking-wide"
-                >
-                  {status === 'sending' ? 'Sending...' : 'Reserve'}
-                </button>
-
-                {/* Status Messages */}
-                {status === 'success' && (
-                  <div className="glass-graphite rounded-xl p-3 text-center">
-                    <p className="text-black font-light text-sm">
-                      ✓ You're on the waitlist!
-                    </p>
-                  </div>
-                )}
-                {status === 'error' && (
-                  <div className="glass rounded-xl p-3 text-center border border-red-500/20">
-                    <p className="text-red-600 font-light text-sm">
-                      ✗ Error. Please try again.
-                    </p>
-                  </div>
-                )}
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -33,24 +33,20 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center" 
-        style={{ backgroundImage: 'url(/contact-background.jpg)' }}
-      ></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/30 to-white/50"></div>
+    <section id="contact" className="relative flex items-center justify-center overflow-hidden bg-white">
 
-      <div className="relative z-10 w-full px-4 py-20">
-        <div className="max-w-2xl mx-auto">
-          <div className="glass-transparent-form rounded-3xl p-12 border border-black/10 shadow-2xl">
+      <div className="relative z-10 w-full px-4 py-10">
+        <div className="max-w-2xl lg:max-w-3xl mx-auto">
+          <div className="rounded-3xl p-6 md:p-12 shadow-2xl" style={{ backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(20px)' }}>
             <div className="text-center mb-10">
-              <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4 text-black">
-                Horma+ Priority Access
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold mb-4 text-white">
+                Horma+ <br />
+                Priority Access
               </h2>
-              <p className="text-black/70 font-light leading-relaxed">
-                Be among the first for whom we adapt the technologies of the future, 
-                <br />
-                providing personalized care for your hormonal health.
+              <p className="text-white/70 font-light leading-relaxed text-sm">
+                <span className="font-bold text-white">Be among the 1-st</span> for whom we adapt <br /> 
+                the technologies of the future, providing <br />
+                personalized care for your hormonal health.
               </p>
             </div>
 
@@ -63,7 +59,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Full name"
-                  className="w-full px-5 py-3 glass-transparent text-black rounded-xl focus:ring-2 focus:ring-black/20 focus:outline-none transition-all duration-200 font-light placeholder-black/50"
+                  className="w-full px-5 py-3 glass-transparent text-white rounded-xl focus:ring-2 focus:ring-white/20 focus:outline-none transition-all duration-200 font-light placeholder-white/50"
                 />
               </div>
 
@@ -75,7 +71,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Email address"
-                  className="w-full px-5 py-3 glass-transparent text-black rounded-xl focus:ring-2 focus:ring-black/20 focus:outline-none transition-all duration-200 font-light placeholder-black/50"
+                  className="w-full px-5 py-3 glass-transparent text-white rounded-xl focus:ring-2 focus:ring-white/20 focus:outline-none transition-all duration-200 font-light placeholder-white/50"
                 />
               </div>
 
@@ -87,14 +83,14 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Phone number"
-                  className="w-full px-5 py-3 glass-transparent text-black rounded-xl focus:ring-2 focus:ring-black/20 focus:outline-none transition-all duration-200 font-light placeholder-black/50"
+                  className="w-full px-5 py-3 glass-transparent text-white rounded-xl focus:ring-2 focus:ring-white/20 focus:outline-none transition-all duration-200 font-light placeholder-white/50"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full py-3 glass-transparent hover:bg-black/80 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-black rounded-xl transition-all duration-200 font-medium tracking-wide text-lg"
+                className="w-full py-3 bg-white text-black rounded-full font-medium tracking-wide text-lg transition-all duration-200 hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === 'sending' ? 'Sending...' : 'Reserve Your Spot'}
               </button>

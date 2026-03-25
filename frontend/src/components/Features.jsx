@@ -75,23 +75,17 @@ export default function Features() {
 
   return (
     <section id="features" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image - same style as Hero */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{ backgroundImage: 'url(/features-background.jpg)' }}
-      ></div>
-      
-      {/* Gradient Overlay - same as Hero */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/30 to-white/50"></div>
+      {/* Background */}
+      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(20px)' }}></div>
 
       {/* Content */}
       <div className="relative z-10 w-full px-4 py-20 min-h-screen flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          
+
           {/* Section Title */}
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-sans font-bold text-black drop-shadow-sm">
-              A comprehensive view of your health at every stage
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold text-white drop-shadow-sm">
+            A comprehensive <br className="lg:hidden" />view<br className="hidden lg:block" />{' '}of your health<br className="lg:hidden" />{' '}at every stage
             </h2>
           </div>
 
@@ -101,11 +95,7 @@ export default function Features() {
               <button
                 key={index}
                 onClick={() => setActiveFeature(index)}
-                className={`px-6 py-3 rounded-full text-sm font-light tracking-wide transition-all duration-200 glass-transparent-form ${
-                  activeFeature === index
-                    ? 'text-black shadow-lg scale-105'
-                    : 'text-black/70 hover:text-black hover:scale-105'
-                }`}
+                className="px-6 py-3 rounded-full text-sm font-light tracking-wide transition-all duration-200 bg-white text-black hover:scale-105"
               >
                 {feature.title}
               </button>
@@ -114,7 +104,7 @@ export default function Features() {
 
           {/* Phone Mockup with Dynamic Content */}
           <div className="flex justify-center pb-20">
-            <div className="w-72 h-[600px] bg-black rounded-[55px] shadow-2xl p-3 relative overflow-hidden">
+            <div className="w-72 lg:w-80 h-[600px] lg:h-[680px] bg-black rounded-[55px] shadow-2xl p-3 relative overflow-hidden">
               {/* Phone Screen */}
               <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-[47px] overflow-hidden relative">
                 {/* Status Bar */}
