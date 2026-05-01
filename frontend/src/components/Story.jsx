@@ -9,7 +9,7 @@ export default function Story() {
     {
       name: "Ibrahhim Tlektes",
       role: "CTO & Co-Founder",
-      story: "Losing an 8-year love union, a life built together, to an untracked hormonal imbalance taught me a <span class='font-extrabold text-white'> hard truth: we tend to ignore a problem until we have visual proof of it.</span> Our mission is to give people the tools to truly understand themselves and each other.",
+      story: "Losing an 8-year love union, a life built together, to an untracked hormonal imbalance of my partner taught me a <span class='font-extrabold text-white'> hard truth: we tend to ignore a problem until we have visual proof of it.</span> Our mission is to give people the tools to truly understand themselves and each other.",
       image: "/cto-story.jpg"
     }
   ]

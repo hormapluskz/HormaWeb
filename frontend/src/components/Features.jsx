@@ -5,9 +5,10 @@ export default function Features() {
 
   const features = [
     {
-      title: 'Hormones',
-      description: 'Comprehensive hormonal balance monitoring',
+      title: 'Hormonal Balance',
+      description: 'Track your full hormonal panel in real-time. Get insights on digital biomarkers, core insights and more.',
       icon: '⚗️',
+      mockupImage: '/feature-hormonal.jpg',
       phoneContent: {
         title: 'Hormonal Balance',
         subtitle: 'Overall status',
@@ -18,35 +19,10 @@ export default function Features() {
       }
     },
     {
-      title: 'Glucose Monitoring',
-      description: 'Continuous glucose monitoring for metabolic health insights',
-      icon: '🩸',
-      phoneContent: {
-        title: 'Glucose Level',
-        subtitle: 'Real-time tracking',
-        mainValue: '5.2',
-        mainUnit: 'mmol/L',
-        chart: '📊',
-        status: 'Normal Range'
-      }
-    },
-    {
-      title: 'Sleep Apnea (OSA Risk)',
-      description: 'Sleep apnea detection and respiratory monitoring',
-      icon: '😴',
-      phoneContent: {
-        title: 'Sleep Apnea',
-        subtitle: 'OSA Risk Analysis',
-        mainValue: 'Low',
-        mainUnit: '',
-        chart: '📈',
-        status: 'Healthy Breathing'
-      }
-    },
-    {
-      title: 'Menstrual Cycle',
-      description: 'Track menstrual phases, ovulation and PMS symptoms',
+      title: 'Bloom in Every Phase',
+      description: 'Every day of your 28-day journey has its own beauty. Unlock the secrets of your hormonal seasons and stay radiant, balanced, and empowered.',
       icon: '🌸',
+      mockupImage: '/feature-cycle.jpg',
       phoneContent: {
         title: 'Cycle Tracking',
         subtitle: 'Current phase',
@@ -57,92 +33,83 @@ export default function Features() {
       }
     },
     {
-      title: 'Stress',
-      description: 'Real-time stress level detection and management',
-      icon: '🧘',
+      title: 'Turn data into action',
+      description: 'Horma+ AI goes beyond tracking to forecast your physiological state for the days ahead. Get precise recommendations on nutrition, training, and rest to maintain elite-level performance without the risk of burnout.',
+      mockupImage: '/feature-ai.jpg',
       phoneContent: {
-        title: 'Stress Level',
-        subtitle: 'Current',
-        mainValue: 'Low',
-        mainUnit: '',
-        chart: '🧘‍♀️',
-        status: 'Relaxed State'
+        title: 'Cycle Tracking',
+        subtitle: 'Current phase',
+        mainValue: 'Day 14',
+        mainUnit: 'Ovulation',
+
+        status: 'Fertile Window'
       }
     }
   ]
 
   const currentFeature = features[activeFeature]
 
+  const prev = () => setActiveFeature((i) => (i - 1 + features.length) % features.length)
+  const next = () => setActiveFeature((i) => (i + 1) % features.length)
+
   return (
-    <section id="features" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="features" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 px-4">
       {/* Background */}
       <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(20px)' }}></div>
 
-      {/* Content */}
-      <div className="relative z-10 w-full px-4 py-20 min-h-screen flex items-center">
-        <div className="max-w-6xl mx-auto w-full">
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center">
 
-          {/* Section Title */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold text-white drop-shadow-sm">
+        {/* Section Title */}
+        <div className="text-center mb-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold text-white drop-shadow-sm">
             A comprehensive <br className="lg:hidden" />view<br className="hidden lg:block" />{' '}of your health<br className="lg:hidden" />{' '}at every stage
-            </h2>
-          </div>
+          </h2>
+          <p className="text-white/50 text-base lg:text-lg font-light mt-4">One app. Complete hormone intelligence.</p>
+        </div>
 
-          {/* Feature Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
-            {features.map((feature, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveFeature(index)}
-                className="px-6 py-3 rounded-full text-sm font-light tracking-wide transition-all duration-200 bg-white text-black hover:scale-105"
-              >
-                {feature.title}
-              </button>
-            ))}
-          </div>
-
-          {/* Phone Mockup with Dynamic Content */}
-          <div className="flex justify-center pb-20">
-            <div className="w-72 lg:w-80 h-[600px] lg:h-[680px] bg-black rounded-[55px] shadow-2xl p-3 relative overflow-hidden">
-              {/* Phone Screen */}
-              <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-[47px] overflow-hidden relative">
-                {/* Status Bar */}
-                <div className="absolute top-0 left-0 right-0 h-12 flex items-center justify-between px-8 text-white text-xs">
-                  <span>9:41</span>
-                  <div className="flex gap-1">
-                    <span>📶</span>
-                    <span>🔋</span>
-                  </div>
-                </div>
-                
-                {/* App Content - Dynamic based on selected feature */}
-                <div className="pt-16 px-6 text-white h-full flex flex-col">
-                  <div className="text-center mb-8">
-                    <div className="text-6xl mb-4 animate-pulse">{currentFeature.icon}</div>
-                    <h3 className="text-2xl font-bold mb-2">{currentFeature.phoneContent.title}</h3>
-                    <p className="text-gray-400 text-sm">{currentFeature.phoneContent.subtitle}</p>
-                  </div>
-                  
-                  <div className="flex-1 flex flex-col items-center justify-center">
-                    <div className="text-center mb-8">
-                      <div className="text-6xl font-bold mb-2">{currentFeature.phoneContent.mainValue}</div>
-                      <div className="text-gray-400 text-lg">{currentFeature.phoneContent.mainUnit}</div>
-                    </div>
-                    
-                    <div className="text-6xl mb-6">{currentFeature.phoneContent.chart}</div>
-                    
-                    <div className="bg-white/10 rounded-2xl px-6 py-3">
-                      <p className="text-sm">{currentFeature.phoneContent.status}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Phone Mockup */}
+        <div className="w-64 lg:w-72 h-[520px] lg:h-[580px] bg-black rounded-[55px] shadow-2xl p-3 relative overflow-hidden mb-10">
+          <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-[47px] overflow-hidden relative">
+            {/* App Content */}
+            <div
+              className="w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${currentFeature.mockupImage})` }}
+            ></div>
           </div>
         </div>
+
+        {/* Active Feature Card */}
+        <div className="w-full max-w-sm lg:max-w-md bg-white rounded-2xl px-6 py-5 mb-6 text-center shadow-xl">
+          <h3 className="text-lg font-bold text-black mb-1">{currentFeature.title}</h3>
+          <p className="text-black/60 text-sm font-light leading-relaxed">{currentFeature.description}</p>
+        </div>
+
+        {/* Navigation */}
+        <div className="flex items-center gap-6">
+          <button
+            onClick={prev}
+            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+          >
+            ←
+          </button>
+          <div className="flex gap-2">
+            {features.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveFeature(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-200 ${i === activeFeature ? 'bg-white w-5' : 'bg-white/30'}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={next}
+            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+          >
+            →
+          </button>
+        </div>
+
       </div>
     </section>
   )
 }
-

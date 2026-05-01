@@ -1,14 +1,17 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
-import Story from './components/Story'
+import HormoneDescription from './components/HormoneDescription'
 import Features from './components/Features'
 import Lab from './components/Lab'
 import Team from './components/Team'
 import Contact from './components/Contact'
 import Kit from './components/Kit'
+import WhatsInside from './components/WhatsInside'
+import FoundersPage from './components/FoundersPage'
 
-function App() {
+function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const navLinks = [
@@ -16,7 +19,6 @@ function App() {
     { href: '#features', label: 'Features' },
     { href: '#lab', label: 'Horma+ Lab' },
     { href: '#kit', label: 'Horma+ Kit' },
-    { href: '#story', label: 'Story' },
     { href: '#team', label: 'Team' },
     { href: '#contact', label: 'Contact' },
   ]
@@ -33,7 +35,6 @@ function App() {
             backdropFilter: 'blur(12px)'
           }}
         >
-          {/* Main row */}
           <div className="flex items-center w-full h-14 max-[991px]:h-auto">
             <div className="flex items-center w-1/2">
               <span className="text-2xl font-sans font-bold tracking-tight text-white">
@@ -61,7 +62,6 @@ function App() {
               <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </button>
           </div>
-
         </div>
       </nav>
 
@@ -89,10 +89,11 @@ function App() {
       <main className="relative z-10">
         <Hero />
         <Stats />
+        <HormoneDescription />
         <Features />
         <Lab />
-        <Kit/>
-        <Story />
+        <Kit />
+        <WhatsInside />
         <Team />
         <Contact />
       </main>
@@ -108,6 +109,15 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/founders" element={<FoundersPage />} />
+    </Routes>
   )
 }
 
