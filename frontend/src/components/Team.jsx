@@ -2,9 +2,9 @@ export default function Team() {
   const team = [
     {
       name: "Burbayeva Kamila",
-      role: "Doctor of Medicine, BC Endocrinologist, KZ Association of Endocrinologists",
+      role: ["Doctor of Medicine,", "BC Endocrinologist,", "KZ Association of Endocrinologists"],
       photo: "/team-kamila.jpg",
-    },
+    },  
     {
       name: "Urazbekov Beksultan",
       role: ["CEO & Co-Founder,", "Business Strategist,", "Forbes 30U30"],
