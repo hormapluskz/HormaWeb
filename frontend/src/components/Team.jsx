@@ -7,17 +7,17 @@ export default function Team() {
     },
     {
       name: "Urazbekov Beksultan",
-      role: "CEO & Co-Founder, Forbes 30U30",
+      role: ["CEO & Co-Founder,", "Business Strategist,", "Forbes 30U30"],
       photo: "/team-bexultan.jpg",
     },
     {
       name: "Tlektes Ibrahim",
-      role: "CTO & Co-Founder, R&D with product engineering",
+      role: ["CTO & Co-Founder", "R&D with product engineering"],
       photo: "/team-ibrahim.jpg",
     },
     {
       name: "Sagimbekov Adil",
-      role: "CDO & Co-Founder,\n8y. of experience Unicorn companies",
+      role: ["CDO & Co-Founder", "8y. of experience Unicorn companies"],
       photo: "/team-adil.jpg",
     }
   ]
@@ -44,10 +44,10 @@ export default function Team() {
         <div className="relative z-10 w-full px-4 py-20">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold mb-4 text-black drop-shadow-sm">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold mb-4 drop-shadow-sm" style={{ color: '#1D212B' }}>
                 Our Team
               </h2>
-              <p className="text-black/70 text-lg lg:text-xl font-light">
+              <p className="text-lg lg:text-xl font-light" style={{ color: '#1D212B99' }}>
                 Experts united by a passion<br className="lg:hidden" /> for transforming health monitoring
               </p>
             </div>
@@ -62,13 +62,13 @@ export default function Team() {
                     className="w-full aspect-square rounded-xl mb-3 bg-cover bg-center bg-gray-200"
                     style={{ backgroundImage: `url(${member.photo})` }}
                   ></div>
-                  <h3 className="text-sm lg:text-lg font-bold text-black mb-1">{member.name}</h3>
-                  <p className="text-black/70 text-xs lg:text-base font-light">
+                  <h3 className="text-sm lg:text-lg font-bold mb-1" style={{ color: '#1D212B' }}>{member.name}</h3>
+                  <p className="text-xs lg:text-base font-light" style={{ color: '#1D212B99' }}>
                     {Array.isArray(member.role) ? (
                       <>
-                        <span>{member.role[0]}</span>
-                        <br />
-                        <span>{member.role[1]}</span>
+                        {member.role.map((line, i) => (
+                          <span key={i}>{line}{i < member.role.length - 1 && <br />}</span>
+                        ))}
                       </>
                     ) : (
                       member.role.split(',').map((part, i) => (
@@ -82,7 +82,7 @@ export default function Team() {
 
             {/* Team Philosophy */}
             <div className="mt-16 text-center max-w-4xl mx-auto">
-              <p className="text-lg md:text-xl lg:text-2xl text-black/90 font-light leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl font-light leading-relaxed" style={{ color: '#1D212B' }}>
                 We believe in the safe, non-invasive,<br className="lg:hidden" /> and effective power of our biometric intelligence<br className="hidden lg:block" /> so deeply. <span className="font-bold">We don't just track problems,<br className="lg:hidden" /> we catch them before they exist!</span>
               </p>
             </div>
@@ -94,12 +94,12 @@ export default function Team() {
       <section className="relative bg-white px-4 pb-20 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold mb-4 text-black">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold mb-4" style={{ color: '#1D212B' }}>
               Born from personal experiences<br className="hidden lg:block" /> that shaped our mission
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:max-w-4xl lg:mx-auto">
             {founders.map((founder, index) => (
               <div
                 key={index}

@@ -18,7 +18,7 @@ export default function Story() {
     <section id="story" className="relative min-h-screen flex items-center py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold mb-4 text-black">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold mb-4" style={{ color: '#1D212B' }}>
             Born from personal experiences<br className="hidden lg:block" /> that shaped our mission
           </h2>
         </div>

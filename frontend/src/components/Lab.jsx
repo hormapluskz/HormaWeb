@@ -1,15 +1,15 @@
 export default function Lab() {
   return (
-    <section id="lab" className="relative bg-[#f5f5f7] px-4 py-20 md:px-12 overflow-hidden">
+    <section id="lab" className="relative bg-white px-4 py-20 md:px-12 overflow-hidden">
 
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold text-black leading-tight mb-3">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold leading-tight mb-3" style={{ color: '#1D212B' }}>
             Horma+ Lab
           </h2>
-          <p className="text-[15px] md:text-[17px] lg:text-xl text-black/50 font-light">
+          <p className="text-[15px] md:text-[17px] lg:text-xl font-light" style={{ color: '#1D212B99' }}>
             includes a comprehensive blood test <br /> covering 100+ biomarkers
           </p>
         </div>
@@ -62,8 +62,11 @@ export default function Lab() {
           ))}
         </div>
 
+        {/* 3 cards — stacked mobile, row on desktop */}
+        <div className="lg:grid lg:grid-cols-3 lg:gap-6">
+
         {/* Big Card */}
-        <div className="relative w-full max-w-sm mx-auto mb-12 rounded-3xl overflow-hidden shadow-sm" style={{ aspectRatio: '4/5' }}>
+        <div className="relative w-full max-w-sm mx-auto mb-12 lg:max-w-none lg:mb-0 rounded-3xl overflow-hidden shadow-sm" style={{ aspectRatio: '4/5' }}>
           <div className="absolute inset-0 bg-cover bg-center bg-gray-300" style={{ backgroundImage: 'url(/lab-background.jpg)' }}></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
@@ -76,7 +79,7 @@ export default function Lab() {
         </div>
 
         {/* Second Big Card */}
-        <div className="relative w-full max-w-sm mx-auto mb-12 rounded-3xl overflow-hidden shadow-sm bg-gray-200" style={{ aspectRatio: '4/5', backgroundImage: 'url(/lab-insights.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="relative w-full max-w-sm mx-auto mb-12 lg:max-w-none lg:mb-0 rounded-3xl overflow-hidden shadow-sm bg-gray-200" style={{ aspectRatio: '4/5', backgroundImage: 'url(/lab-insights.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <h3 className="text-xl font-bold mb-2">Get Your Insights</h3>
@@ -87,7 +90,7 @@ export default function Lab() {
         </div>
 
         {/* Expert-backed Card */}
-        <div className="relative w-full max-w-sm mx-auto rounded-3xl overflow-hidden shadow-sm" style={{ aspectRatio: '4/5' }}>
+        <div className="relative w-full max-w-sm mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-sm" style={{ aspectRatio: '4/5' }}>
           {/* Background photo */}
           <div className="absolute inset-0 bg-cover bg-center bg-orange-200" style={{ backgroundImage: 'url(/expert-background.jpg)' }}></div>
           <div className="absolute inset-0 bg-black/50"></div>
@@ -138,9 +141,9 @@ export default function Lab() {
             <div>
               <div className="flex items-center gap-1">
                 <span className="text-blue-500 text-xs">✔</span>
-                <span className="text-xs text-black/60">Reviewed by</span>
+                <span className="text-xs" style={{ color: '#1D212B99' }}>Reviewed by</span>
               </div>
-              <span className="text-sm font-bold text-black">Dr. Burabayeva Kamila</span>
+              <span className="text-sm font-bold" style={{ color: '#1D212B' }}>Dr. Burabayeva Kamila</span>
             </div>
           </div>
 
@@ -152,6 +155,8 @@ export default function Lab() {
             </p>
           </div>
         </div>
+
+        </div>{/* end 3-cards grid */}
 
       </div>
     </section>

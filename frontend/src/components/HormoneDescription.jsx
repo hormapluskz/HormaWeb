@@ -5,7 +5,7 @@ export default function HormoneDescription() {
 
         {/* Title */}
         <div className="text-center mb-10">
-          <h2 className="text-[22px] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sans font-bold text-black leading-tight">
+          <h2 className="text-[22px] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sans font-bold leading-tight" style={{ color: '#1D212B' }}>
             Hormones Don't Stay Stable <br className="hidden lg:block" /> They Change Constantly
           </h2>
         </div>
@@ -21,9 +21,9 @@ export default function HormoneDescription() {
 
         {/* Description */}
         <div className="text-center max-w-3xl mx-auto">
-          <p className="text-[15px] md:text-[17px] lg:text-xl text-black/60 font-light leading-relaxed">
+          <p className="text-[15px] md:text-[17px] lg:text-xl font-light leading-relaxed" style={{ color: '#1D212B99' }}>
             You are not the same person you were yesterday. Watch the daily movie of your hormones the unique rhythms that script your{' '}
-            <span className="text-black font-medium">energy, intimacy, and potential</span>{' '}
+            <span className="font-medium" style={{ color: '#1D212B' }}>energy, intimacy, and potential</span>{' '}
             every 24h.  
           </p>
         </div>

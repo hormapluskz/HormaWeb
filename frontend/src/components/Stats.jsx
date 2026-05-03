@@ -27,7 +27,7 @@ export default function Stats() {
   ]
 
   return (
-    <section id="stats" className="relative min-h-[50vh] lg:min-h-screen flex items-center py-20 px-4">
+    <section id="stats" className="relative min-h-[50vh] lg:min-h-screen flex items-center py-20 px-4 bg-white">
       {/* Background Image */}
       {/* Mobile background */}
       <div
@@ -44,7 +44,7 @@ export default function Stats() {
         <div className="flex flex-col justify-between min-h-[80vh]">
           {/* Main Stat */}
           <div className="text-center mb-10">
-            <h2 className="text-[22px] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sans font-light leading-snug text-black max-w-6xl mx-auto">
+            <h2 className="text-[22px] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-sans font-light leading-snug max-w-6xl mx-auto" style={{ color: '#1D212B' }}>
               <span className="font-bold">1.7B</span> with hormonal or metabolic imbalances <span className="font-bold">don't get regular monitoring</span> and lack predictive insights
             </h2>
           </div>
@@ -55,7 +55,7 @@ export default function Stats() {
             <div
               key={index}
               className="rounded-xl p-3 lg:p-5 text-center hover:scale-105 transition-transform duration-200"
-              style={{ backgroundColor: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(12px)' }}
+              style={{ backgroundColor: '#1D212B', backdropFilter: 'blur(12px)' }}
             >
               <div className="text-xl md:text-3xl lg:text-4xl font-bold mb-1 text-white">
                 {stat.value}

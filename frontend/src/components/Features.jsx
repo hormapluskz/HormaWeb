@@ -55,16 +55,16 @@ export default function Features() {
   return (
     <section id="features" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 px-4">
       {/* Background */}
-      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(20px)' }}></div>
+      <div className="absolute inset-0 bg-white"></div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center">
 
         {/* Section Title */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold text-white drop-shadow-sm">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold drop-shadow-sm" style={{ color: '#1D212B' }}>
             A comprehensive <br className="lg:hidden" />view<br className="hidden lg:block" />{' '}of your health<br className="lg:hidden" />{' '}at every stage
           </h2>
-          <p className="text-white/50 text-base lg:text-lg font-light mt-4">One app. Complete hormone intelligence.</p>
+          <p className="text-base lg:text-lg font-light mt-4" style={{ color: '#1D212B99' }}>One app. Complete hormone intelligence.</p>
         </div>
 
         {/* Phone Mockup */}
@@ -88,7 +88,8 @@ export default function Features() {
         <div className="flex items-center gap-6">
           <button
             onClick={prev}
-            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+            className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-colors"
+            style={{ color: '#1D212B' }}
           >
             ←
           </button>
@@ -97,13 +98,15 @@ export default function Features() {
               <button
                 key={i}
                 onClick={() => setActiveFeature(i)}
-                className={`w-2 h-2 rounded-full transition-all duration-200 ${i === activeFeature ? 'bg-white w-5' : 'bg-white/30'}`}
+                className={`w-2 h-2 rounded-full transition-all duration-200 ${i === activeFeature ? 'w-5' : ''}`}
+                style={{ backgroundColor: i === activeFeature ? '#1D212B' : '#1D212B40' }}
               />
             ))}
           </div>
           <button
             onClick={next}
-            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+            className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-colors"
+            style={{ color: '#1D212B' }}
           >
             →
           </button>
