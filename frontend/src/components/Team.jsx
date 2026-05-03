@@ -2,7 +2,7 @@ export default function Team() {
   const team = [
     {
       name: "Burbayeva Kamila",
-      role: "MD, BC Endocrinologist, Kazakhstan Association of Endocrinologists",
+      role: "Doctor of Medicine, BC Endocrinologist, Kazakhstan Association of Endocrinologists",
       photo: "/team-kamila.jpg",
     },
     {
@@ -81,8 +81,8 @@ export default function Team() {
             </div>
 
             {/* Team Philosophy */}
-            <div className="mt-16 text-center max-w-xs mx-auto">
-              <p className="text-lg font-light leading-relaxed" style={{ color: '#1D212B' }}>
+            <div className="mt-16 text-center max-w-xs md:max-w-4xl mx-auto">
+              <p className="text-lg md:text-xl lg:text-2xl font-light leading-relaxed" style={{ color: '#1D212B' }}>
                 We believe in the safe, non-invasive, and effective power of our biometric intelligence so deeply. <span className="font-bold">We don't just track problems, we catch them before they exist!</span>
               </p>
             </div>

@@ -10,9 +10,11 @@ import Contact from './components/Contact'
 import Kit from './components/Kit'
 import WhatsInside from './components/WhatsInside'
 import FoundersPage from './components/FoundersPage'
+import useScrollReveal from './hooks/useScrollReveal'
 
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false)
+  useScrollReveal()
 
   const navLinks = [
     { href: '#home', label: 'Home' },
@@ -76,7 +78,7 @@ function LandingPage() {
       {/* Full-screen mobile menu */}
       {menuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-[198] flex flex-col justify-start pt-24 px-8 group"
+          className="menu-enter md:hidden fixed inset-0 z-[198] flex flex-col justify-start pt-24 px-8 group"
           style={{ backgroundColor: 'rgba(29,33,43,0.97)', backdropFilter: 'blur(20px)' }}
         >
           {navLinks.map(({ href, label }) => (
@@ -104,14 +106,14 @@ function LandingPage() {
       {/* Main Content */}
       <main className="relative z-10">
         <Hero />
-        <Stats />
-        <HormoneDescription />
-        <Features />
-        <Lab />
-        <Kit />
-        <WhatsInside />
-        <Team />
-        <Contact />
+        <div className="reveal"><Stats /></div>
+        <div className="reveal"><HormoneDescription /></div>
+        <div className="reveal"><Features /></div>
+        <div className="reveal"><Lab /></div>
+        <div className="reveal"><Kit /></div>
+        <div className="reveal"><WhatsInside /></div>
+        <div className="reveal"><Team /></div>
+        <div className="reveal"><Contact /></div>
       </main>
 
       {/* Footer */}

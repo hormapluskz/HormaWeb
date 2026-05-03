@@ -113,7 +113,7 @@ export default function Kit() {
 
       {/* we built */}
       <div className="text-center mt-10">
-        <p className="text-xl md:text-2xl font-light leading-relaxed max-w-xs mx-auto italic glass-transparent-form rounded-2xl p-8" style={{ color: '#1D212B' }}>
+        <p className="text-xl md:text-2xl font-light leading-relaxed max-w-xs md:max-w-4xl mx-auto italic glass-transparent-form rounded-2xl p-8" style={{ color: '#1D212B' }}>
           We built Horma+ to bridge this gap continuous, predictive insights that empower proactive health decisions
         </p>
       </div>
