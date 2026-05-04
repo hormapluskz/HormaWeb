@@ -6,17 +6,17 @@ export default function Team() {
       photo: "/team-kamila.jpg",
     },  
     {
-      name: "Urazbekov Beksultan",
+      name: "Beksultan Urazbekov",
       role: ["CEO & Co-Founder,", "Business Strategist,", "Forbes 30U30"],
       photo: "/team-bexultan.jpg",
     },
     {
-      name: "Tlektes Ibrahim",
+      name: "Ibrahhim Tlektes",
       role: ["CTO & Co-Founder", "R&D with product engineering"],
       photo: "/team-ibrahim.jpg",
     },
     {
-      name: "Sagimbekov Adil",
+      name: "Adil Sagymbekov",
       role: ["CDO & Co-Founder", "8y. of experience Unicorn companies"],
       photo: "/team-adil.jpg",
     }
