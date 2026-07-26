@@ -7,9 +7,12 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-change-this-in-production'
+DEBUG = os.environ.get('DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
 
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-development-only')
+
+if not DEBUG and SECRET_KEY == 'django-insecure-local-development-only':
+    raise RuntimeError('SECRET_KEY must be set when DEBUG=False')
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 

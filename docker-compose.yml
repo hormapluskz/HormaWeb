@@ -8,7 +8,7 @@ services:
     environment:
       - DEBUG=False
       - ALLOWED_HOSTS=hormaplus.com,www.hormaplus.com,82.115.43.196,localhost
-      - SECRET_KEY=${SECRET_KEY:-your-secret-key-change-this}
+      - SECRET_KEY=${SECRET_KEY:?Set SECRET_KEY in .env before starting Docker Compose}
     volumes:
       - ./backend:/app
       - static_volume:/app/staticfiles
