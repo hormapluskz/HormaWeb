@@ -11,6 +11,7 @@ import Kit from './components/Kit'
 import WhatsInside from './components/WhatsInside'
 import FoundersPage from './components/FoundersPage'
 import useScrollReveal from './hooks/useScrollReveal'
+import HowItWorks from './components/HowItWorks'
 
 function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -113,7 +114,9 @@ function LandingPage() {
         <div className="reveal"><Kit /></div>
         <div className="reveal"><WhatsInside /></div>
         <div className="reveal"><Team /></div>
+        <div className="reveal"><HowItWorks /></div>
         <div className="reveal"><Contact /></div>
+        
       </main>
 
       {/* Footer */}
