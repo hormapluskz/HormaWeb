@@ -12,6 +12,14 @@
 }
 
 @font-face {
+  font-family: 'GalderGlynn';
+  src: url('/fonts/galderglynn_esquire/Galderglynn Titling Rg.otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter-4.1/InterVariable.ttf') format('truetype-variations');
   font-weight: 400;
@@ -19,6 +27,10 @@
   font-display: swap;
 }
 
+/* @font-face {
+  font-family: 'Galderglynn';
+  src: url('/fonts/GalderGlynn/galderglynn_esq_bd.otf');
+} */
 /* Scroll reveal */
 .reveal {
   opacity: 0;
