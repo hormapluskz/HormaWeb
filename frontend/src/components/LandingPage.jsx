@@ -13,6 +13,7 @@ import useScrollReveal from '../hooks/useScrollReveal'
 import HowItWorks from './HowItWorks'
 import Navbar from './Navbar'
 import Comparison from './Comparison'
+import Clinicians from './Clinicians/Clinicians'
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -39,12 +40,12 @@ export default function LandingPage() {
     { href: '#team', label: 'Team' },
   ];
 
-  const mainLinks = navLinks.slice(0, 2) ;  
+  const mainLinks = navLinks.slice(0, 3) ;  
   const menuLinks = navLinks;               
 
 
   return (
-    <div className="min-h-screen bg-white text-black overflow-x-hidden">
+    <div className="min-h-screen bg-white text-black overflow-x-hidden font-[GalderGlynn]">
       {/* Navigation */}
       
       <Navbar scrolled={scrolled} mainLinks={mainLinks} setMenuOpen={setMenuOpen} />
@@ -146,7 +147,8 @@ export default function LandingPage() {
         <div className="reveal"><WhatsInside /></div>
         <div className="reveal"><Team /></div>
         <div className="reveal"><HowItWorks /></div>
-        <Comparison />
+        <div className="reveal"><Comparison /></div>
+        <div className="reveal"><Clinicians /></div>
         <div className="reveal"><Contact /></div>
         
       </main>

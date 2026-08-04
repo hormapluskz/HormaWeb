@@ -102,14 +102,14 @@ export default function Hero() {
           {/* Heading */}
           <div className="lg:absolute lg:top-28 lg:left-8 mb-8 lg:mb-0">
             <div className="w-3 h-3 mb-3 rounded-full bg-white animate-pulse"></div>
-            <div className="text-[#f6f7f9] text-[56px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-normal leading-[0.85] font-[Inter]">
+            <div className="text-[#f6f7f9] text-[56px] sm:text-[80px] md:text-[100px] lg:text-[120px] leading-[0.85]">
               HORMA+
             </div>
           </div>
 
           {/* Description */}
           <div className="lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2 max-w-sm lg:max-w-xs lg:text-right mb-8 lg:mb-0">
-            <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed sm:text-[16.5px]">
               I transform your vision into captivating images using expert lighting and creative direction.
             </p>
           </div>

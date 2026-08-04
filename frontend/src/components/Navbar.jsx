@@ -31,7 +31,7 @@ export default function Navbar({scrolled, mainLinks, setMenuOpen}){
           </a>
 
           {/* Левые ссылки */}
-          <div className="hidden lg:flex items-center group/left">
+          <div className="hidden lg:flex flex-1 items-center group/left">
             {mainLinks.map(({ href, label }) => (
               <a
                 key={href}
@@ -44,22 +44,21 @@ export default function Navbar({scrolled, mainLinks, setMenuOpen}){
           </div>
 
           {/* CTA справа */}
-          <div className="hidden lg:flex items-center">
+          <div className="flex flex-1 items-center justify-end gap-2">
             <a
               href="#contact"
-              className="px-4 py-2 rounded-full bg-white text-[#1D212B] text-sm font-medium transition-all duration-200 hover:opacity-90 active:scale-95"
+              className="hidden lg:inline-flex px-4 py-2 rounded-full bg-white text-[#1D212B] text-sm font-medium transition-all duration-200 hover:opacity-90 active:scale-95"
             >
               Priority Access
             </a>
-          </div>
-
-          {/* 9-dot гамбургер */}
-          <button
-            className="ml-auto w-10 h-10 flex items-center justify-center"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Menu"
-          >
-            <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
+            
+            <button
+              className="w-10 h-10 flex items-center justify-center"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Menu"
+            >
+              {/* 9-dot SVG */}
+              <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
               <circle cx="2" cy="2" r="2" fill="white" />
               <circle cx="10" cy="2" r="2" fill="white" />
               <circle cx="18" cy="2" r="2" fill="white" />
@@ -70,7 +69,8 @@ export default function Navbar({scrolled, mainLinks, setMenuOpen}){
               <circle cx="10" cy="20" r="2" fill="white" />
               <circle cx="18" cy="20" r="2" fill="white" />
             </svg>
-          </button>
+            </button>
+          </div>
         </div>
       </nav>
     )
