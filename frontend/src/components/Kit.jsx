@@ -10,7 +10,7 @@ export default function Kit() {
     },
 
     {
-      image: '/kit-card-2.jpg',
+      image: '/kit-card-2.webp',
       value: '12.4',
       unit: 'mIU/L',
       label: 'FSH Level',
@@ -18,7 +18,7 @@ export default function Kit() {
       tips: ['Reduce stress daily', 'Sleep 7–9 hours per night']
     },
     {
-      image: '/kit-card-3.jpg',
+      image: '/kit-card-3.webp',
       value: '2.5',
       unit: 'mg/mmol',
       label: 'microAlbuminuria',
@@ -26,7 +26,7 @@ export default function Kit() {
       tips: ['Stay well hydrated daily', 'Reduce sodium intake']
     },
     {
-      image: '/kit-card-4.jpg',
+      image: '/kit-card-4.webp',
       value: '493',
       unit: 'ng/dL',
       label: 'Testosterone',
@@ -42,7 +42,7 @@ export default function Kit() {
       tips: ['Maintain iodine-rich diet', 'Monitor symptoms with doctor']
     },
     {
-      image: '/kit-card-6.jpg',
+      image: '/kit-card-6.webp',
       value: '45',
       unit: 'ng/mL',
       label: 'Ferritin Level',
@@ -58,7 +58,7 @@ export default function Kit() {
       tips: ['Get 15–20 min sunlight daily', 'Supplement D3 + K2 if deficient']
     },
     {
-      image: '/kit-card-8.jpg',
+      image: '/kit-card-8.webp',
       value: '8.2',
       unit: 'mIU/mL',
       label: 'LH Level',

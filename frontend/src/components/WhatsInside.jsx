@@ -16,12 +16,12 @@ export default function WhatsInside() {
       desc: 'Get instant AI insights backed by professional doctor reports for a personalized health roadmap you can trust.',
     },
     {
-      img: '/women_inside.jpg',
+      img: '/women_inside.webp',
       title: 'Women Health',
       desc: 'From cycle tracking to fertility insights, we provide tailored support designed specifically for the unique needs of women\'s biology.',
     },
     {
-      img: '/lab_inside.jpg',
+      img: '/lab_inside.webp',
       title: 'Horma Lab',
       desc: 'Complete your tests at the lab and get your results sent straight to the app, merging professional data with your daily hormonal tracking.',
     },
@@ -51,10 +51,12 @@ export default function WhatsInside() {
           {items.map((item, i) => (
             <div key={i} className="flex items-center gap-6">
               {/* Small photo card */}
-              <div
-                className="shrink-0 w-[140px] h-[160px] md:w-[180px] md:h-[200px] rounded-3xl bg-gray-200 bg-cover bg-center shadow-sm"
-                style={{ backgroundImage: `url(${item.img})` }}
-              ></div>
+              <img src={item.img}
+                className="shrink-0 w-[140px] h-[160px] md:w-[180px] md:h-[200px] rounded-3xl shadow-sm"
+                // style={{ backgroundImage: `url(${item.img})` }}
+              >
+
+              </img>
               {/* Text */}
               <div>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-2" style={{ color: '#1D212B' }}>

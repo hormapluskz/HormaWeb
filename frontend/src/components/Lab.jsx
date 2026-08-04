@@ -19,10 +19,10 @@ export default function Lab() {
           {/* Mobile: row 1 — 4 items */}
           <div className="grid grid-cols-4 gap-3 mb-3">
             {[
-              { label: 'Metabolic Panel',       img: '/bio-metabolic.jpg' },
-              { label: 'Liver & Kidney Base',   img: '/bio-liver.jpg' },
-              { label: 'Sex Hormones',          img: '/bio-hormones.jpg' },
-              { label: 'Thyroid Control (TSH)', img: '/bio-thyroid.jpg' },
+              { label: 'Metabolic Panel',       img: '/bio-metabolic.webp' },
+              { label: 'Liver & Kidney Base',   img: '/bio-liver.webp' },
+              { label: 'Sex Hormones',          img: '/bio-hormones.webp' },
+              { label: 'Thyroid Control (TSH)', img: '/bio-thyroid.webp' },
             ].map(({ label, img }) => (
               <div key={label} className="flex flex-col items-center gap-2 text-center">
                 <div className="w-14 h-14 rounded-2xl bg-cover bg-center bg-gray-200 shadow-sm" style={{ backgroundImage: `url(${img})` }}></div>
@@ -33,8 +33,8 @@ export default function Lab() {
           {/* Mobile: row 2 — 3 items centered */}
           <div className="flex justify-center gap-3">
             {[
-              { label: 'Vital Nutrients', img: '/bio-nutrients.jpg' },
-              { label: 'Blood Health',    img: '/bio-blood.jpg' },
+              { label: 'Vital Nutrients', img: '/bio-nutrients.webp' },
+              { label: 'Blood Health',    img: '/bio-blood.webp' },
               { label: 'Premium Add-on', img: '/bio-premium.jpg' },
             ].map(({ label, img }) => (
               <div key={label} className="flex flex-col items-center gap-2 text-center w-[calc(25%-6px)]">
@@ -47,12 +47,12 @@ export default function Lab() {
         {/* Desktop: single row */}
         <div className="hidden lg:grid lg:grid-cols-7 gap-3 mb-16">
           {[
-            { label: 'Metabolic Panel',       img: '/bio-metabolic.jpg' },
-            { label: 'Liver & Kidney Base',   img: '/bio-liver.jpg' },
-            { label: 'Sex Hormones',          img: '/bio-hormones.jpg' },
-            { label: 'Thyroid Control (TSH)', img: '/bio-thyroid.jpg' },
-            { label: 'Vital Nutrients',       img: '/bio-nutrients.jpg' },
-            { label: 'Blood Health',          img: '/bio-blood.jpg' },
+            { label: 'Metabolic Panel',       img: '/bio-metabolic.webp' },
+            { label: 'Liver & Kidney Base',   img: '/bio-liver.webp' },
+            { label: 'Sex Hormones',          img: '/bio-hormones.webp' },
+            { label: 'Thyroid Control (TSH)', img: '/bio-thyroid.webp' },
+            { label: 'Vital Nutrients',       img: '/bio-nutrients.webp' },
+            { label: 'Blood Health',          img: '/bio-blood.webp' },
             { label: 'Premium Add-on',        img: '/bio-premium.jpg' },
           ].map(({ label, img }) => (
             <div key={label} className="flex flex-col items-center gap-2 text-center">
