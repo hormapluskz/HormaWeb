@@ -14,6 +14,8 @@ import HowItWorks from './HowItWorks'
 import Navbar from './Navbar'
 import Comparison from './Comparison'
 import Clinicians from './Clinicians/Clinicians'
+import { navLinks } from '../data/navLinks'
+
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,14 +33,7 @@ export default function LandingPage() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#features', label: 'Features' },
-    { href: '#lab', label: 'Horma+ Lab' },
-    { href: '#kit', label: 'Horma+ Kit' },
-    { href: '#inside', label: 'Inside' },
-    { href: '#team', label: 'Team' },
-  ];
+  
 
   const mainLinks = navLinks.slice(0, 3) ;  
   const menuLinks = navLinks;               
