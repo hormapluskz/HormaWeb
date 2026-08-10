@@ -14,8 +14,9 @@ import HowItWorks from './HowItWorks'
 import Navbar from './Navbar'
 import Comparison from './Comparison'
 import Clinicians from './Clinicians/Clinicians'
+import WhatWeTest from './What_We_Test/WhatWeTest'
 import { navLinks } from '../data/navLinks'
-
+// import WhatWeTest from './WhatWeTest/WhatWeTest'
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false);
@@ -144,6 +145,7 @@ export default function LandingPage() {
         <div className="reveal"><HowItWorks /></div>
         <div className="reveal"><Comparison /></div>
         <div className="reveal"><Clinicians /></div>
+        <div className="reveal"><WhatWeTest /></div>
         <div className="reveal"><Contact /></div>
         
       </main>
