@@ -9,7 +9,7 @@ export default function Navbar({scrolled, mainLinks, setMenuOpen}){
             transition-[max-width,border-radius,padding,gap,background-color,backdrop-filter,box-shadow] 
             duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
             ${scrolled
-              ? 'max-w-[56rem] rounded-full bg-black/60 backdrop-blur-[1.5rem] py-1.5 pl-6 pr-1.5 shadow-[0_1px_4px_#0003,0_7px_24px_#0000001a] mt-3'
+              ? 'max-w-[56rem] rounded-full bg-black/60 backdrop-blur-[1.5rem] py-1.5 pl-6 pr-1.5 shadow-[0_1px_4px_#0003,0_7px_24px_#0000001a] lg:mt-3'
               : 'max-w-full rounded-none bg-[#1D212B] py-4 px-6 lg:px-12'
             }
             max-lg:max-w-full max-lg:rounded-none max-lg:bg-[#1D212B] max-lg:py-3.5 max-lg:px-5
