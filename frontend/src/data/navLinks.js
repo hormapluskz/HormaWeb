@@ -1,5 +1,6 @@
 export const navLinks = [
-    { href: '#home', label: 'Home' },
+    { href: '/', label: 'Home' },
+    { href: '/whatWeTest', label: 'What We Test' },
     { href: '#features', label: 'Features' },
     { href: '#lab', label: 'Horma+ Lab' },
     { href: '#kit', label: 'Horma+ Kit' },
