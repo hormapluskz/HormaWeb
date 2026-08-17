@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Hero from './Hero'
 import Stats from './Stats'
 import HormoneDescription from './HormoneDescription'
@@ -15,12 +14,14 @@ import Navbar from './Navbar'
 import Comparison from './Comparison'
 import Clinicians from './Clinicians/Clinicians'
 import WhatWeTest from './What_We_Test/WhatWeTest'
-import { navLinks } from '../data/navLinks'
-// import WhatWeTest from './WhatWeTest/WhatWeTest'
+import MembershipSection from './Pricing/MembershipSection'
+
+
 
 export default function LandingPage() {
-
   useScrollReveal();
+
+  
 
   return (
     <>
@@ -38,6 +39,7 @@ export default function LandingPage() {
         <div className="reveal"><HowItWorks /></div>
         <div className="reveal"><Comparison /></div>
         <div className="reveal"><Clinicians /></div>
+        <MembershipSection />
         <div className="reveal"><Contact /></div>
         
       </main>

@@ -1,5 +1,9 @@
-export default function Navbar({scrolled, mainLinks, setMenuOpen}){
-    
+import { Link } from "react-router-dom"
+import { useHandleNavClick } from "../hooks/useHandleNavClick";
+
+
+export default function Navbar({scrolled, mainLinks, setMenuOpen, menuOpen}){
+    const handleNavClick = useHandleNavClick();
 
     return(
         <nav className={`fixed inset-x-0 top-0 z-[999] transition-[padding] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] `}>
@@ -17,44 +21,64 @@ export default function Navbar({scrolled, mainLinks, setMenuOpen}){
         >
 
           {/* === Логотип по центру (desktop) === */}
-          <a
-            href="/"
+          <Link
+            href="/#home"
+            to={'/#home'}
+            onClick={(e) => handleNavClick(e, "/#home")}
             className={`
               text-white font-bold tracking-tight whitespace-nowrap transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
               lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 z-[1]
               text-xl lg:text-2xl
               ${scrolled ? 'lg:scale-[0.85]' : 'lg:scale-100'}
             `}
-            style={{ fontFamily: 'Arial, sans-serif' }}
+            
           >
             Horma+
-          </a>
+          </Link>
 
           {/* Левые ссылки */}
           <div className="hidden lg:flex flex-1 items-center group/left">
-            {mainLinks.map(({ href, label }) => (
+        {mainLinks.map(({ href, label }) => {
+          const isHashLink = href.includes('#');
+
+          if (isHashLink) {
+            return (
               <a
                 key={href}
                 href={href}
+                onClick={(e) => handleNavClick(e, href)}
                 className="text-white text-sm font-medium px-3 py-2 transition-opacity duration-150 group-hover/left:opacity-50 hover:!opacity-100"
               >
                 {label}
               </a>
-            ))}
-          </div>
+            );
+          }
+
+          return (
+            <Link
+              key={href}
+              to={href}
+              className="text-white text-sm font-medium px-3 py-2 transition-opacity duration-150 group-hover/left:opacity-50 hover:!opacity-100"
+            >
+              {label}
+            </Link>
+          );
+        })}
+      </div>
 
           {/* CTA справа */}
           <div className="flex flex-1 items-center justify-end gap-2">
             <a
               href="#contact"
-              className="hidden lg:inline-flex px-4 py-2 rounded-full bg-white text-[#1D212B] text-sm font-medium transition-all duration-200 hover:opacity-90 active:scale-95"
+              onClick={(e) => handleNavClick(e, '#contact')}
+              className="hidden lg:inline-flex px-4 py-2 rounded-full bg-white text-[#1D212B] text-sm font-medium"
             >
               Priority Access
             </a>
             
             <button
               className="w-10 h-10 flex items-center justify-center"
-              onClick={() => setMenuOpen(true)}
+              onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Menu"
             >
               {/* 9-dot SVG */}

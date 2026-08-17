@@ -4,7 +4,7 @@ import { comparison_items } from "../data/comparison_items";
 export default function Comparison(){
 
   return (
-    <section className="py-24 md:py-32 px-4 sm:px-6 font-[GalderGlynn]">
+    <section id="comparison" className="py-24 md:py-32 px-4 sm:px-6 font-[GalderGlynn]">
       <div className="max-w-[720px] mx-auto">
         {/* Intro */}
         <p className="text-base md:text-lg mb-6 text-center">

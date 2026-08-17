@@ -12,7 +12,7 @@ export default function Clinicians() {
 
   return (
     <>
-    <section className="py-20 md:py-32 bg-white">
+    <section id="clinicians" className="py-20 md:py-32 bg-white">
       {/* Title + Logos */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-12 md:mb-16">
         <h2 className="text-[1.75rem] sm:text-[2.25rem] md:text-[3rem] font-bold text-gray-900 leading-[1.1] tracking-tight max-w-3xl mb-10 md:mb-14">

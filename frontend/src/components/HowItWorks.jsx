@@ -2,10 +2,10 @@ import Card from "./Card";
 
 export default function HowItWorks() {
   return (
-    <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <section id="howItWorks" className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
 
       <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-        <h3 className="tracking-tight font-[Arial,sans-serif] text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal leading-[1.2]">
+        <h3 className="tracking-tight text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal leading-[1.2]">
           How it Works
         </h3>
         <p className="mt-3 sm:mt-4 text-gray-600 leading-relaxed text-sm sm:text-base px-2 sm:px-0">

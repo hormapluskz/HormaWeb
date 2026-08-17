@@ -11,10 +11,10 @@ export default function Card({ src, text, desc }) {
       </div>
       
       <div className="mt-4 w-full xl:w-[314px] mx-auto xl:mx-0">
-        <h2 className="tracking-[-0.025rem] text-[20px] sm:text-[24px] font-normal" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <h2 className="tracking-[-0.025rem] text-[20px] sm:text-[24px] font-normal">
           {text}
         </h2>
-        <p className="mt-1 text-[14px] sm:text-[16px] text-[#71717a] leading-relaxed" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <p className="mt-1 text-[14px] sm:text-[16px] text-[#71717a] leading-relaxed">
           {desc}
         </p>
       </div>
